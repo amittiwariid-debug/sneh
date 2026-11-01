@@ -224,7 +224,7 @@ function App() {
           <a href="#/shop/Necklaces" onClick={() => setMobileMenuOpen(false)}>Necklaces</a>
           <a href="#/shop/Bangles" onClick={() => setMobileMenuOpen(false)}>Bangles</a>
           <a href="#/shop/Rings">Rings</a>
-          <a href="#our-story" onClick={() => setMobileMenuOpen(false)}>Our story</a>
+          <a href="#/our-story" onClick={() => setMobileMenuOpen(false)}>Our story</a>
         </nav>
         <div className="header-actions">
           <button
@@ -415,7 +415,7 @@ function App() {
           </div>
         </section>
 
-        <section className="brand-story section-wrap" id="our-story"><p className="eyebrow">SNEH JEWELS BY SHILPA</p><h2>A little love, in every detail.</h2><p>Discover the world of Sneh: artificial jewellery for everyday styling, traditional looks and festive celebrations. Find a detail that feels like you.</p><p className="demo-note">Draft introduction — Shilpa’s personal story will be added here.</p></section>
+        <section className="brand-story section-wrap"><p className="eyebrow">SNEH JEWELS BY SHILPA</p><h2>A little love, in every detail.</h2><p>Discover the world of Sneh: artificial jewellery for everyday styling, traditional looks and festive celebrations. Find a detail that feels like you.</p><a className="text-link" href="#/our-story">Read our story <ArrowRight size={16}/></a></section>
         <section className="newsletter" aria-labelledby="newsletter-title">
           <div className="newsletter__ornament" aria-hidden="true">♡</div>
           <p className="eyebrow">A LITTLE NOTE, NOW AND THEN</p>
@@ -433,7 +433,7 @@ function App() {
             <p>Artificial jewellery for everyday<br />and festive moments.</p>
           </div>
           <div className="site-footer__links">
-            <div><h2>Explore</h2><a href="#/shop/All">Shop all</a><a href="#categories">Our collections</a><a href="#our-story">Our story</a></div>
+            <div><h2>Explore</h2><a href="#/shop/All">Shop all</a><a href="#categories">Our collections</a><a href="#/our-story">Our story</a></div>
             <div><h2>A little help</h2><a href="#/help/contact">Contact details</a><a href="#/help/care">Product care</a><a href="#/help/policies">Delivery & returns</a></div>
           </div>
           <div className="site-footer__social">

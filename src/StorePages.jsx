@@ -1,6 +1,7 @@
 import { matchesProduct, matchesCollection, curatedCollections } from "./catalog";
 import { whatsappUrl } from "./socialProfiles";
 import ProductGallery from "./ProductGallery";
+import OurStory from "./OurStory";
 import React, { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Heart, Minus, Plus, Search, X } from "lucide-react";
 
@@ -19,7 +20,8 @@ export default function StorePages({ route, products, categories, cart, wishlist
     return sort === "low" ? result.sort((a, b) => a.price - b.price) : sort === "high" ? result.sort((a, b) => b.price - a.price) : result;
   }, [products, page, slug, query, sort, wishlist]);
   const cards = list => <div className="product-grid">{list.map(item => <ProductCard key={item.id} product={item} isSaved={wishlist.includes(item.id)} onToggleSave={toggleWishlist} onAdd={addToCart} />)}</div>;
-  return <div className="store-page section-wrap">
+  return <div className={`store-page${page === "our-story" ? " store-page--story" : " section-wrap"}`}>
+    {page === "our-story" ? <OurStory /> : <>
     <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="#top">Home</a><span>/</span><a href="#/shop/All">Collection</a><span>/</span><span>{page === "product" ? product?.name || "Piece not found" : page === "shop" ? slug : page}</span></nav>
     {page === "help" ? <section className="page-heading"><p className="eyebrow">CUSTOMER INFORMATION</p><h1>{slug === "contact" ? "Let’s stay in touch." : slug === "care" ? "Caring for your jewellery." : "Delivery & returns."}</h1><p>{slug === "contact" ? "Get in touch with Sneh Jewels. Our WhatsApp contact is available below when the business number has been added." : slug === "care" ? "Care instructions depend on the final materials and finish. Verified care guidance will be added to each product before launch." : "Delivery regions, charges, timing and the returns policy are awaiting business confirmation. No orders are accepted in this demo."}</p>{slug === "contact" && (whatsappUrl ? <a className="button button--primary contact-whatsapp" href={whatsappUrl} target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp <ArrowRight size={16}/></a> : <p className="detail-note">WhatsApp chat is being set up. The business phone number still needs to be added.</p>)}<a className="text-link" href="#/shop/All">Explore the collection</a></section> : page === "product" ? product ? <>
       <section className="product-detail">
@@ -34,6 +36,7 @@ export default function StorePages({ route, products, categories, cart, wishlist
       {curatedCollections[slug]?.note && <p className="demo-note">{curatedCollections[slug].note}</p>}<div className="shop-toolbar"><nav aria-label="Collections">{["All", ...categories.map(item => item.name)].map(name => <a key={name} className={slug === name && page === "shop" ? "selected" : ""} href={`#/shop/${name}`}>{name === "All" ? "All pieces" : name}</a>)}</nav><div className="shop-tools"><label className="shop-search"><Search size={17}/><input aria-label="Search this collection" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Find your little love"/></label><select aria-label="Sort products" value={sort} onChange={event => setSort(event.target.value)}><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div></div>
       <p className="results-count" role="status">{filtered.length} {filtered.length === 1 ? "piece" : "pieces"}</p>{filtered.length ? cards(filtered) : <div className="empty-state"><Heart size={30}/><h2>{page === "wishlist" ? "Save something lovely." : "No pieces found."}</h2><p>{page === "wishlist" ? "Tap the heart on a piece to add it here." : "Try another search or collection."}</p><a className="text-link" href="#/shop/All" onClick={() => setQuery("")}>Explore all pieces <ArrowRight size={16}/></a></div>}
       <p className="demo-note">Editable demo catalog · AI-generated concept images and sample INR prices.</p>
+    </>}
     </>}
   </div>;
 }
