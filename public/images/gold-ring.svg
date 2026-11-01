@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" fill="none">
+  <defs><linearGradient id="bg" x1="50" y1="20" x2="600" y2="740" gradientUnits="userSpaceOnUse"><stop stop-color="#f1e7da"/><stop offset="1" stop-color="#d0b59b"/></linearGradient><linearGradient id="gold" x1="150" y1="341" x2="468" y2="556" gradientUnits="userSpaceOnUse"><stop stop-color="#f3dd9c"/><stop offset=".25" stop-color="#b88a3c"/><stop offset=".5" stop-color="#f5dfa1"/><stop offset=".78" stop-color="#a97a31"/><stop offset="1" stop-color="#ebc976"/></linearGradient><radialGradient id="pearl" cx="0" cy="0" r="1" gradientTransform="matrix(31 42 -43 32 310 258)" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".7" stop-color="#eee2d1"/><stop offset="1" stop-color="#c9b8a2"/></radialGradient></defs>
+  <path fill="url(#bg)" d="M0 0h640v760H0z"/><path d="M0 621c169-74 390-44 640 26v113H0V621Z" fill="#e8d9c9"/>
+  <ellipse cx="320" cy="477" rx="179" ry="102" transform="rotate(-17 320 477)" stroke="url(#gold)" stroke-width="50"/>
+  <ellipse cx="320" cy="477" rx="179" ry="102" transform="rotate(-17 320 477)" stroke="#fff0be" stroke-width="7" stroke-dasharray="3 24" stroke-linecap="round"/>
+  <path d="m260 308 60-96 60 96-60 39-60-39Z" fill="url(#gold)"/><circle cx="320" cy="262" r="48" fill="url(#pearl)"/><circle cx="302" cy="247" r="13" fill="#fff" opacity=".8"/>
+  <path d="m283 304 37 25 37-25m-87 35-30 27m174-27 30 27" stroke="#a77c37" stroke-width="8" stroke-linecap="round"/>
+  <path d="M86 147c74-39 140-47 207-29m87 8c71-9 128 1 173 29" stroke="#fff9f0" stroke-width="3" opacity=".62"/>
+</svg>
