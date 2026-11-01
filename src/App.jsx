@@ -1,6 +1,6 @@
 import HomeEdits from "./HomeEdits";
 import SocialLinks from "./SocialLinks";
-import { products, categories, matchesProduct } from "./catalog";
+import { products, categories, matchesProduct, imageUrl } from "./catalog";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import StorePages from "./StorePages";
 import {
@@ -305,7 +305,7 @@ function App() {
             <span className="hero__number" aria-hidden="true">01 / 04</span>
           </div>
           <div className="hero__visual">
-            <img src="/images/campaign-hero.png" alt="AI-generated campaign portrait of a woman wearing floral pearl-style jewellery" />
+            <img src={imageUrl("campaign-hero.png")} alt="AI-generated campaign portrait of a woman wearing floral pearl-style jewellery" />
             <div className="hero__caption">
               <span>THE SNEH FEELING</span>
               <span>Made for moments of love <ArrowUpRight size={14} /></span>
@@ -316,7 +316,7 @@ function App() {
               <span>with love</span>
             </div>
           </div>
-          <div className="hero-product-stack"><a href="#/product/pearl-twist-ring"><img src="/images/ring-demo.png" alt="Concept image of pearl twist ring"/><span>01 / THE FINISHING TOUCH <ArrowUpRight size={17}/></span></a><a href="#/product/everyday-pendant"><img src="/images/pendant-demo.png" alt="Concept image of pearl pendant"/><span>02 / CLOSE TO YOUR HEART <ArrowUpRight size={17}/></span></a></div><a className="hero__scroll" href="#categories" aria-label="Scroll to explore">
+          <div className="hero-product-stack"><a href="#/product/pearl-twist-ring"><img src={imageUrl("ring-demo.png")} alt="Concept image of pearl twist ring"/><span>01 / THE FINISHING TOUCH <ArrowUpRight size={17}/></span></a><a href="#/product/everyday-pendant"><img src={imageUrl("pendant-demo.png")} alt="Concept image of pearl pendant"/><span>02 / CLOSE TO YOUR HEART <ArrowUpRight size={17}/></span></a></div><a className="hero__scroll" href="#categories" aria-label="Scroll to explore">
             <ArrowDownRight size={16} /> SCROLL TO EXPLORE
           </a>
         </section>
@@ -399,7 +399,7 @@ function App() {
         <HomeEdits products={products} wishlist={wishlist} toggleWishlist={toggleWishlist} addToCart={addToCart} ProductCard={ProductCard} />
         <section className="story" id="shilpas-picks" aria-labelledby="story-title">
           <div className="story__image">
-            <img src="/images/earrings-demo.png" alt="Concept image of pearl drop earrings in the featured edit" loading="lazy" />
+            <img src={imageUrl("earrings-demo.png")} alt="Concept image of pearl drop earrings in the featured edit" loading="lazy" />
             <span className="story__image-caption">A little Sneh, in the details.</span>
           </div>
           <div className="story__copy">

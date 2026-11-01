@@ -1,13 +1,13 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { curatedCollections } from './catalog';
+import { curatedCollections, imageUrl } from './catalog';
 
 export default function HomeEdits({ products, wishlist, toggleWishlist, addToCart, ProductCard }) {
  const favourites = curatedCollections.Bestsellers.ids.map(id => products.find(product => product.id === id)).filter(Boolean);
  const collections = [
-  {key:'Everyday', image:'/images/pendant-demo.png', alt:'Pearl-style pendant concept on blush fabric and ivory stone'},
-  {key:'Festive', image:'/images/bangles-demo.png', alt:'Decorative gold-tone bangle concepts for festive styling'},
-  {key:'Floral', image:'/images/ring-demo.png', alt:'Floral pearl-style ring concept'},
+  {key:'Everyday', image:imageUrl('pendant-demo.png'), alt:'Pearl-style pendant concept on blush fabric and ivory stone'},
+  {key:'Festive', image:imageUrl('bangles-demo.png'), alt:'Decorative gold-tone bangle concepts for festive styling'},
+  {key:'Floral', image:imageUrl('ring-demo.png'), alt:'Floral pearl-style ring concept'},
  ];
  return <>
   <section className="home-favourites" aria-labelledby="favourites-title">

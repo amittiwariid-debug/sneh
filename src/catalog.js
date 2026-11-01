@@ -1,4 +1,6 @@
 // Editable demo catalog. Appearance descriptions do not verify materials or plating.
+export const imageUrl = (fileName) => `${import.meta.env.BASE_URL}images/${fileName}`;
+
 export const products = [
   {
     id: "pearl-drop-earrings",
@@ -9,7 +11,7 @@ export const products = [
     name: "Floral Pearl-Style Earrings",
     category: "Earrings",
     price: 699,
-    image: "/images/earrings-demo.png",
+    image: imageUrl("earrings-demo.png"),
     alt: "Artificial jewellery concept: gold-tone floral earrings with pearl-style drops",
     note: "A little something lovely",
   },
@@ -22,7 +24,7 @@ export const products = [
     name: "Pearl-Style Floral Pendant",
     category: "Necklaces",
     price: 899,
-    image: "/images/pendant-demo.png",
+    image: imageUrl("pendant-demo.png"),
     alt: "Artificial jewellery concept: gold-tone chain with a pearl-style floral pendant",
     note: "Made for every day",
   },
@@ -35,7 +37,7 @@ export const products = [
     name: "Classic Gold-Tone Bangles",
     category: "Bangles",
     price: 1199,
-    image: "/images/bangles-demo.png",
+    image: imageUrl("bangles-demo.png"),
     alt: "Artificial jewellery concept: decorative gold-tone bangles",
     note: "An old favourite, anew",
   },
@@ -48,17 +50,17 @@ export const products = [
     name: "Floral Pearl-Style Ring",
     category: "Rings",
     price: 549,
-    image: "/images/ring-demo.png",
+    image: imageUrl("ring-demo.png"),
     alt: "Artificial jewellery concept: floral gold-tone ring with a pearl-style centre",
     note: "The finishing touch",
   },
 ];
 
 export const categories = [
-  { name: "Earrings", image: "/images/earrings-demo.png", alt: "Artificial pearl-style drop earrings" },
-  { name: "Necklaces", image: "/images/pendant-demo.png", alt: "Artificial pearl-style pendant necklace" },
-  { name: "Bangles", image: "/images/bangles-demo.png", alt: "Gold-tone artificial bangles" },
-  { name: "Rings", image: "/images/ring-demo.png", alt: "Gold-tone artificial ring with pearl-style detail" },
+  { name: "Earrings", image: imageUrl("earrings-demo.png"), alt: "Artificial pearl-style drop earrings" },
+  { name: "Necklaces", image: imageUrl("pendant-demo.png"), alt: "Artificial pearl-style pendant necklace" },
+  { name: "Bangles", image: imageUrl("bangles-demo.png"), alt: "Gold-tone artificial bangles" },
+  { name: "Rings", image: imageUrl("ring-demo.png"), alt: "Gold-tone artificial ring with pearl-style detail" },
 ];
 
 export const matchesProduct = (product, query) => {
