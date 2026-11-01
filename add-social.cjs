@@ -1,0 +1,1 @@
+const fs=require('fs');const p='src/App.jsx';let s=fs.readFileSync(p,'utf8');s='import SocialLinks from "./SocialLinks";\n'+s;s=s.replace(/<a className="social-link" href="#\/help\/contact"[\s\S]*?<\/a>\s*<p className="site-footer__placeholder">[\s\S]*?<\/p>/,'<SocialLinks />');fs.writeFileSync(p,s);
